@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Database Interface</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Basketball Database Interface</h1>
+            <div class="team-info">
+                <h2>Team Members:</h2>
+                <p id="team-members">Ajani Quibuyen, Cole Beach, and Victor Wong</p>
+            </div>
+        </header>
+
+        <main>
+            <section class="relations">
+                <h2>Relations</h2>
+                <div class="relation-list">
+                    <form action="display_results.php" method="POST" style="display:inline;">
+                        <input type="hidden" name="relation" value="User">
+                        <button type="submit" class="relation-link">User</button>
+                    </form>
+                    <form action="display_results.php" method="POST" style="display:inline;">
+                        <input type="hidden" name="relation" value="Team">
+                        <button type="submit" class="relation-link">Team</button>
+                    </form>
+                    <form action="display_results.php" method="POST" style="display:inline;">
+                        <input type="hidden" name="relation" value="Player">
+                        <button type="submit" class="relation-link">Player</button>
+                    </form>
+                    <form action="display_results.php" method="POST" style="display:inline;">
+                        <input type="hidden" name="relation" value="Game">
+                        <button type="submit" class="relation-link">Game</button>
+                    </form>
+                    <form action="display_results.php" method="POST" style="display:inline;">
+                        <input type="hidden" name="relation" value="Media">
+                        <button type="submit" class="relation-link">Media</button>
+                    </form>
+                    <form action="display_results.php" method="POST" style="display:inline;">
+                        <input type="hidden" name="relation" value="Comment">
+                        <button type="submit" class="relation-link">Comment</button>
+                    </form>
+                    <form action="display_results.php" method="POST" style="display:inline;">
+                        <input type="hidden" name="relation" value="MVP_Pick">
+                        <button type="submit" class="relation-link">MVP_Pick</button>
+                    </form>
+                    <form action="display_results.php" method="POST" style="display:inline;">
+                        <input type="hidden" name="relation" value="TeamGameLog">
+                        <button type="submit" class="relation-link">TeamGameLog</button>
+                    </form>
+                    <form action="display_results.php" method="POST" style="display:inline;">
+                        <input type="hidden" name="relation" value="PlayerGameLog">
+                        <button type="submit" class="relation-link">PlayerGameLog</button>
+                    </form>
+                    <form action="display_results.php" method="POST" style="display:inline;">
+                        <input type="hidden" name="relation" value="Fav_Player">
+                        <button type="submit" class="relation-link">Fav_Player</button>
+                    </form>
+                    <form action="display_results.php" method="POST" style="display:inline;">
+                        <input type="hidden" name="relation" value="Fav_Team">
+                        <button type="submit" class="relation-link">Fav_Team</button>
+                    </form>
+                </div>
+            </section>
+
+            <section class="queries">
+                <h2>Queries</h2>
+                <div class="query-list">
+                    <div class="query-item">
+                        <h3>Query1:</h3>
+                        <p class="query-description">This query shows information about every player in our database along with their team stats.</p>
+                        <form action="display_results.php" method="POST">
+                            <input type="hidden" name="query_type" value="query1">
+                            <button type="submit" class="query-link">Execute Query</button>
+                        </form>
+                    </div>
+                    <div class="query-item">
+                        <h3>Query2:</h3>
+                        <p class="query-description">This query uses calculates the average points/rebounds/assists of players by position along with the highest and lowest scorers.</p>
+                        <form action="display_results.php" method="POST">
+                            <input type="hidden" name="query_type" value="query2">
+                            <button type="submit" class="query-link">Execute Query</button>
+                        </form>
+                    </div>
+                    <div class="query-item">
+                        <h3>Query3:</h3>
+                        <p class="query-description">This query uses a subquery to find players whose points are above the average of all players.</p>
+                        <form action="display_results.php" method="POST">
+                            <input type="hidden" name="query_type" value="query3">
+                            <button type="submit" class="query-link">Execute Query</button>
+                        </form>
+                    </div>
+                    <div class="query-item">
+                        <h3>Query4:</h3>
+                        <p class="query-description">This query finds positions with strong rebounding performances.</p>
+                        <form action="display_results.php" method="POST">
+                            <input type="hidden" name="query_type" value="query4">
+                            <button type="submit" class="query-link">Execute Query</button>
+                        </form>
+                    </div>
+                    <div class="query-item">
+                        <h3>Query5:</h3>
+                        <p class="query-description">This query uses left join to show teams that do and don't have media on our database.</p>
+                        <form action="display_results.php" method="POST">
+                            <input type="hidden" name="query_type" value="query5">
+                            <button type="submit" class="query-link">Execute Query</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section class="ad-hoc">
+                <h2>Ad-hoc Query</h2>
+                <div class="query-box">
+                    <form action="display_results.php" method="POST">
+                        <input type="hidden" name="query_type" value="custom">
+                        <textarea name="sql_query" id="sql-query" placeholder="Enter your SQL query here..."></textarea>
+                        <div class="button-group">
+                            <button type="submit" id="submit-query">Submit</button>
+                            <button type="reset" id="clear-query">Clear</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
